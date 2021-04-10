@@ -21,3 +21,22 @@ p {
     border-radius: 30px;
 }
 
+/* Style For Header Section */
+
+.container-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container-header-logo {
+    width: 67px;
+    height: 49px;
+    margin: 25px 70px 0 0;
+}
+
+.container-header-home {
+    width: 48px;
+    height: 48px;
+    margin: 25px 0 0 70px;
+}
