@@ -53,3 +53,22 @@ p {
     margin-top: -45px;
     font-size: 15px;
 }
+
+/* Style For Speak Sectin */
+
+.container-speak {
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.container-speak-paragraph {
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+#volume {
+    margin-left: 12px;
+}
