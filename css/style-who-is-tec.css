@@ -1,0 +1,23 @@
+/* General Style  */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    Font-family : 'Rowdies', cursive;
+    font-style: normal;
+    font-weight: 300;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.container {
+    width: 414px;
+    height: 736px;
+    background: #45BADD;
+    border-radius: 30px;
+}
+
