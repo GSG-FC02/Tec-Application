@@ -40,3 +40,16 @@ p {
     height: 48px;
     margin: 25px 0 0 70px;
 }
+
+/* Style For content Section */
+
+.container-content {
+    width: 414px;
+    height: 439px;
+}
+
+.container-content-introduction {
+    line-height: 22px;
+    margin-top: -45px;
+    font-size: 15px;
+}
