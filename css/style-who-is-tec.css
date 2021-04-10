@@ -72,3 +72,24 @@ p {
 #volume {
     margin-left: 12px;
 }
+
+/* Style For Button */
+
+button {
+    width: 244px;
+    height: 75px;
+    text-align: center;
+    border-radius: 51px;
+    box-shadow: inset 0px 3px 14px rgba(255, 52, 130, 0.33);
+    background-color: #82FF34;
+    margin: 0 85px;
+}
+
+.button-paragraph {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 31px;
+    line-height: 39px;
+    color: #FF3482;
+    text-decoration: none;
+}
