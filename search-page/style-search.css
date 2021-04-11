@@ -128,5 +128,15 @@ footer {
     .image-robot {
         text-align: center;
     }
+    .action-buttons {
+        margin-top: 10%;
+    }
+    .action-buttons a {
+        font-size: 30px;
+        margin-bottom: 40px;
+        border-radius: 30px;
+        line-height: 60px;
+        height: 60px;
+    }
 }
 /* End media query */
