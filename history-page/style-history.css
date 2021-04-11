@@ -52,6 +52,10 @@ button:hover{
     font-size: 25px;
     font-weight: 100;
 }
+.remove-icon{
+    float: right;
+    margin-right:  5px;
+}
 /*Footer Style*/
 .footer button { /*remove all button*/
     width: 206px;
