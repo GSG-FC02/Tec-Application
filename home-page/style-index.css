@@ -1,3 +1,4 @@
+/* General Style */
 *{
     margin: 0;
     padding: 0;
@@ -9,6 +10,8 @@ body{
     Font-family : 'Rowdies', cursive; 
     min-height: 100vh;
 }
+
+/* Header Section Style*/
 
 .link-index-header{
     text-decoration: none;
@@ -47,6 +50,8 @@ body{
     box-shadow: 0 6px 6px 0 rgba(130, 255, 52, 0.57);
 }
 
+/* Figure Section Style */
+
 .robot-and-speaker-icon-container{
     text-align: center;
     margin-top: 45px;
@@ -79,6 +84,8 @@ body{
     
 }
 
+/* Learn with tec button section Style */
+
 .link-index-section{
     text-decoration: none;
     color: #FF3482;
@@ -89,17 +96,11 @@ body{
     background: #82FF34;
     box-shadow: 0px 4px 4px #FF3482;
     border-radius: 51px;
-    transform: rotate(0.53deg);
     border: none;
     width: 18rem;
     height: 79.1px;
     font-weight: 1000;
-    font-style: normal;
     font-size: 1.8rem;
-    line-height: 39px;
-    text-align: center;
-    color: #FF3482;
-
 }
 
 #Learn-with-Tec-button:hover{
@@ -110,5 +111,12 @@ body{
     transform: translateY(3px);
     box-shadow: 0 6px 6px 0 #FF3482;
 }
+
+
+/* Start media query */
+
+
+
+
 
 
