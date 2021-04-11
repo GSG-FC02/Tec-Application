@@ -91,3 +91,21 @@ button {
     color: #FF3482;
     text-decoration: none;
 }
+
+/* Start media query */
+
+@media (min-width:425px){
+    .container {
+        display: block;
+        margin: auto;
+    }
+}
+
+@media (min-width:1024px){
+    .container {
+        display: block;
+        margin: 20px auto;
+    }
+}
+
+/* End media query */ 
