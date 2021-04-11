@@ -77,11 +77,11 @@ footer {
     width: 80%;
     margin: 30px auto auto auto;
 }
-.buttons {
+.action-buttons {
     width: 50%;
     margin-top: 20%;
 }
-.buttons a {
+.action-buttons a {
     color: #FF3482;
     background: #82FF34;
     font-size: 18px;
