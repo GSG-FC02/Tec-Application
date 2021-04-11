@@ -8,7 +8,6 @@
 
 p {
     Font-family : 'Rowdies', cursive;
-    font-style: normal;
     font-weight: 300;
     text-align: center;
     color: rgb(0, 0, 0);
@@ -86,7 +85,6 @@ button {
 }
 
 .button-paragraph {
-    font-style: normal;
     font-weight: bold;
     font-size: 31px;
     line-height: 39px;
