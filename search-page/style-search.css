@@ -1,0 +1,132 @@
+/* General property */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #45BADD ;
+    font-family : 'Rowdies', cursive;
+}
+
+/* start header  */
+header {
+    width: 80%;
+    margin: 50px auto 0 auto;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+/* End header */
+
+/* start section search */
+.search-bar  {
+    width: 80%;
+    margin: 50px auto;
+    display: flex;
+}
+.search-bar input {
+    height: 45px;
+    width: 100%;
+    border-radius: 15px 0 0 15px;
+    font-size: 20px;
+    text-indent:20px;
+    border: none;
+    outline: none;
+}
+.search-bar .search-icon {
+    width: 55px;
+    background: #FF3482;
+    padding: 5px;
+    text-align: center;
+    border-radius: 0 15px 15px 0;
+    cursor: pointer;
+}
+.search-bar .search-icon img {
+    width: 25px;
+    margin-top:5px;
+}
+.search-bar input::placeholder { 
+    color:rgba(0, 0, 0, 0.46);
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.search-bar input:focus::-webkit-input-placeholder {
+    opacity: 0;
+    transition: opacity 0.35s ease-in-out;
+}
+/* End section search  */
+
+/* Start section image */
+.sample-image {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+.sample-image img {
+    max-width: 100%;
+    border: 5px solid #FFF;
+    border-radius: 15px;
+}
+/* End section image */
+
+/* Start footer */
+footer {
+    display: flex;
+    width: 80%;
+    margin: 30px auto auto auto;
+}
+.action-buttons {
+    width: 50%;
+    margin-top: 20%;
+}
+.action-buttons a {
+    color: #FF3482;
+    background: #82FF34;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 4px #ff3482;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 45px;
+    cursor: pointer;
+} 
+.image-robot {
+    width: 50%;
+    text-align: right;
+} 
+.image-robot img {
+    max-width: 100%;
+}
+/* End footer */
+
+/* Start media query */
+@media (max-width:330px) {
+    .search-bar input {
+        text-indent:10px;
+    }
+    .search-bar input::placeholder { 
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+    .buttons a {
+        font-size: 16px;
+    }
+}
+@media (min-width:1200px){
+    .buttons {
+        margin-top: 10%;
+        text-align: right;
+    }
+    .buttons a {
+        width: 90%;
+    }
+    .image-robot {
+        text-align: center;
+    }
+}
+/* End media query */
