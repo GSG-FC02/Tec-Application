@@ -20,8 +20,8 @@
 
     <!-- start section search -->
     <section class="search-bar">
-        <input type="text" placeholder="Type your word here">
-        <div class="search-icon">
+        <input type="text" id="inputSearch" placeholder="Type your word here">
+        <div class="search-icon" id="searchIcon">
             <img src="../images/searchicon.png" alt="Search icon">
         </div>
     </section>
@@ -30,7 +30,7 @@
     <!-- Start section image -->
     <section class="sample-image">
         <figure>
-            <img src="../images/sample.png" alt="Sample image">
+            <img src="../images/sample.png" id="Photo-fetched" alt="Sample image">
         </figure>
     </section>
     <!-- End section image -->
@@ -38,14 +38,18 @@
     <!-- Start footer -->
     <footer>
         <div class="action-buttons">
-            <a href = "#">Listen again</a>
+            <a id="action-loop">Listen again</a>
             <a href = "../history-page/history.html">Your words!</a>
         </div>
         <div class="image-robot">
             <img src="../images/robot.gif" alt="Robot">
+            <audio id="eleAudio" controls autoplay> 
+                Your browser does not support the audio element.
+            </audio>
         </div>
     </footer>
     <!-- End footer -->
 
+    <script src="search.js"></script>
 </body>
 </html>
