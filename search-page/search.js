@@ -26,3 +26,22 @@ function enteredWord() {
 }
 
 /************************************************************************************************ */
+
+// function working to fetch the image of based on the entered word from API
+
+searchAction.addEventListener("click", fetchPhoto )
+
+function fetchPhoto() {
+    fetch(`https://api.unsplash.com/search/photos?query=${input.value}&client_id=vc40VGPe_rbHs0hMlQ4Z9UzWhPWW94MF_mmqLH7219E` , {
+    method: 'GET',
+})
+    .then(response => { return response.json() })
+    .then(data => {
+        console.log(data.results[0].urls.small)
+        selectPhoto.setAttribute("src" , data.results[0].urls.small);
+    })
+    .catch(error => { console.log('Something went wrong', error);
+    });
+}
+
+/************************************************************************************************ */
