@@ -56,10 +56,10 @@ function loopAudio() {
 
 // Trigger a Button Click on Enter
 
-input.addEventListener('keyup', function(event) {
+selector("#input-search").addEventListener('keyup', function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
-        searchAction.click();
+        selector("#searchIcon").click();
     }
 });
 
