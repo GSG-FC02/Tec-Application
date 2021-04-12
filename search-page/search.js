@@ -45,3 +45,13 @@ function fetchPhoto() {
 }
 
 /************************************************************************************************ */
+
+// function working a repeat of pronunciation the word
+
+actionLoop.addEventListener("click", loopAudio )
+
+function loopAudio() {
+    wordAudio.play();
+}
+
+/************************************************************************************************ */
