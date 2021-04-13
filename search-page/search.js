@@ -4,6 +4,7 @@ let selector = (select) => {
     return document.querySelector(select)
 }
 
+
 // Exmple : selector("#input-search") <=> document.getElementById("input-search");
 
 /************************************************************************************************ */
@@ -88,6 +89,7 @@ function displayWord (){
     let wordDiv = document.getElementById("newWord");
 
     wordDiv.textContent = selector("#input-search").value;
+    /* Local Storage Part */
 
 // Clear Input Search
 selector("#input-search").value = "";
