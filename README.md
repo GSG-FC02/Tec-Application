@@ -1,6 +1,5 @@
 # Tec App
-You can see our live link here:
-https://gsg-fc02.github.io/Tec-Application/
+You can see our live link [here](https://gsg-fc02.github.io/Tec-Application/)
 
 ## Problem
 Kids getting bored while searching English vocabulary in dictionaries in an ordinary way and without visual pictures.
