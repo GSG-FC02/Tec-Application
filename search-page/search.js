@@ -76,3 +76,33 @@ selector("#input-search").addEventListener("keypress", function (event) {
         return false;
     }
 });
+
+/************************************************************************************************ */
+
+// function to display word add in search input
+
+selector("#searchIcon").addEventListener("click", displayWord )
+
+function displayWord (){
+
+// Create The Main Div Element
+let mainDiv = document.createElement("div");
+
+// Add Class For Main Div Element
+mainDiv.classList.add("newWord");
+
+// Create World Text 
+let text = document.createTextNode(`Your Word is : ${selector("#input-search").value}`);
+
+// Append The Text To Main Child
+mainDiv.appendChild(text);
+
+// Append The Main Div To Container 
+selector(".sample-image").appendChild(mainDiv);
+
+// Set mainDiv before Image
+selector(".sample-image").insertBefore(mainDiv,selector(".sample-image").childNodes[0])
+
+// Clear Input Search
+selector("#input-search").value = "";
+} 
