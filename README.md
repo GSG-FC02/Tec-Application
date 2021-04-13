@@ -1,4 +1,5 @@
 # Tec App
+You can see our live link [here](https://gsg-fc02.github.io/Tec-Application/)
 
 ## Problem
 Kids getting bored while searching English vocabulary in dictionaries in an ordinary way and without visual pictures.
@@ -57,9 +58,9 @@ In Tec App I can:
   This page contains the previous words which the user searched about before arranged. There is remove all button to clear all the history. Also from here he can step back to search page through the arrow icon or return to home page by clicking the house icon.
   
   ## The Way of installation the project to run it locally:
-  `git clone` 
-  `cd Tec Application`
-  `go live server`
+  * `git clone` 
+  * `cd Tec Application`
+  * `go live server`
   
   
   ## Tech Stack:
