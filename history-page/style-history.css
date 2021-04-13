@@ -37,10 +37,10 @@ body {
 .words-container{
     width: 90%;
 }
-button:hover{
-    cursor: pointer;
+button{
+    border: none;
+    outline: none;
 }
-
 
 .words-container button { /*your words buttons */
     width: 170px;
@@ -66,8 +66,12 @@ button:hover{
     font-size: 24px;
     font-weight: 300;
     text-align: center;
-    box-shadow: 0px 4px 4px #FF3482;
+    box-shadow: 0px 2px 2px #FF3482;
 
+}
+button:hover{
+    cursor: pointer;
+    box-shadow: 0px 4px 4px #FF3482;
 }
 .footer {
     position: fixed;
@@ -77,7 +81,8 @@ button:hover{
     
 }
 /* Media Quiery */
-@media screen and (min-width: 425px){ /*Responsive on 425 px and up*/
+/*Responsive on 425 px and up*/
+@media screen and (min-width: 425px){ 
 
     .logo-img {
         width: 120px;
@@ -92,7 +97,8 @@ button:hover{
     }
     
 }
-@media screen and (min-width: 768px){ /*Responsive on 768 px and up*/
+/*Responsive on 768 px and up*/
+@media screen and (min-width: 768px){ 
     .words-container {
         display: flex;
         justify-content: center;
