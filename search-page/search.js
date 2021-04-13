@@ -64,3 +64,15 @@ selector("#input-search").addEventListener('keyup', function(event) {
 });
 
 /************************************************************************************************ */
+// function to allow only English letter
+
+selector("#input-search").addEventListener("keypress", function (event) {
+    
+    if ((event.keyCode > 64 && event.keyCode < 91 ) || (event.keyCode > 96 && event.keyCode < 123 ) 
+        || event.keyCode == 8 || event.keyCode == 46 || event.keyCode == 32) {
+        return true;    
+    } else {
+        event.preventDefault();
+        return false;
+    }
+});
