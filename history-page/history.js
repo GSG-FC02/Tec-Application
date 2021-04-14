@@ -11,3 +11,11 @@ let selector = (select) => {
   };
   // HTML Elements
 const wordDiv = selector('.words-container');
+
+// slapping data from local storage when onloud
+window.onload = function () {
+    let oldData = JSON.parse(localStorage.getItem("data"));
+    console.log(oldData)
+   
+   
+  };
