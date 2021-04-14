@@ -3,15 +3,27 @@
 let selector = (select) => {
     return document.querySelector(select)
 }
-
 // Exmple : selector("#input-search") <=> document.getElementById("input-search");
+
+let nullImage = 'https://i.pinimg.com/originals/c9/22/68/c92268d92cf2dbf96e3195683d9e14fb.png';
+let sampleImage = 'http://127.0.0.1:5500/images/sample.png';
 
 /************************************************************************************************ */
 selector("#searchIcon").addEventListener("click", () => {
-    displayWord();                               // invoke of function to display word 
-    enteredWord();                               // invoke of function to fetch audio 
-    fetchPhoto();                               // invoke of function to fetch the image
-    selector("#input-search").value = "";        // Clear Input Search
+    let regex = /^[a-zA-Z]*$/;
+    if (selector("#input-search").value !== "") {
+
+        if(selector("#input-search").value.match(regex)) {
+            fetchPhoto();                               // invoke of function to fetch the image
+            enteredWord();                               // invoke of function to fetch audio 
+        } else {
+            alert('Please enter your word in English only !');
+            selector("#input-search").value = ""; 
+        }
+        
+    } else { 
+        alert('Please enter a valid word');
+    }
 });
 
 /************************************************************************************************ */
@@ -19,10 +31,16 @@ selector("#searchIcon").addEventListener("click", () => {
 // function to display word add in search input
 
 function displayWord (){
-
     selector("#newWord").textContent = selector("#input-search").value;
+    selector("#input-search").value = "";
 } 
 
+// function to hide the previous valid word when an invalid word is entered
+
+function hideWord (){
+    selector("#newWord").textContent = null;
+    selector("#input-search").value = "";
+} 
 /************************************************************************************************ */
 
 // function working to fetch audio of the entered word from API
@@ -49,7 +67,14 @@ function fetchPhoto() {
 })
     .then(response => { return response.json() })
     .then(data => {
-        selector("#Photo-fetched").setAttribute("src" , data.results[0].urls.small);
+        if(data.results.length !== 0 ){
+            selector("#Photo-fetched").setAttribute("src" , data.results[0].urls.small);
+            displayWord(); 
+            storeData();  // invoke of function to local storage
+        } else {
+            selector("#Photo-fetched").setAttribute("src" , nullImage);
+            hideWord();  //hide the previous valid word when an invalid word is entered
+        }
     })
     .catch(error => { console.log('Something went wrong', error);
     });
@@ -62,7 +87,11 @@ function fetchPhoto() {
 selector("#action-loop").addEventListener("click", loopAudio )
 
 function loopAudio() {
-    selector("#element-Audio").play();
+    if (selector("#Photo-fetched").src !== nullImage && selector("#Photo-fetched").src !== sampleImage ){
+        selector("#element-Audio").play();
+    } else {
+        alert ("No Voice !");
+    }
 }
 
 /************************************************************************************************ */
@@ -77,17 +106,28 @@ selector("#input-search").addEventListener('keyup', function(event) {
 });
 
 /************************************************************************************************ */
-// function to allow only English letter
 
-selector("#input-search").addEventListener("keypress", function (event) {
-    
-    if ((event.keyCode > 64 && event.keyCode < 91 ) || (event.keyCode > 96 && event.keyCode < 123 ) 
-        || event.keyCode == 8 || event.keyCode == 46 || event.keyCode == 32) {
-        return true;    
-    } else {
-        event.preventDefault();
-        return false;
+/********************** Start Local Storage part **************************/ 
+
+let dataArray = [];         // Array to push new data
+function storeData() {
+
+    /* save word and audio in an object */
+    const dataObject = {
+    name: selector("#newWord").textContent,
+    audioSet: `https://lex-audio.useremarkable.com/mp3/${selector("#input-search").value}_us_1.mp3`
     }
-});
 
-/************************************************************************************************ */
+/* If there is data saved already in local storage, add the new data to old data*/
+        let oldData = JSON.parse(localStorage.getItem("data"));
+        if(oldData !== null){
+            oldData.push(dataObject);
+            localStorage.setItem("data", JSON.stringify(oldData))
+        } else{     /* If local storage is empty, Push new data to the empty array */
+            dataArray.push(dataObject)  //Push object of data to the array
+
+            /* set stringified data in local storage */
+            localStorage.setItem('data', JSON.stringify(dataArray))
+        }
+}
+/********************** End Local Storage part **************************/
