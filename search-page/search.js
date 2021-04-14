@@ -84,27 +84,44 @@ selector("#input-search").addEventListener("keypress", function (event) {
 
 selector("#searchIcon").addEventListener("click", displayWord )
 
+let dataArray = []; // an empty array to store data in it
+
 function displayWord (){
 
     let wordDiv = document.getElementById("newWord");
 
     wordDiv.textContent = selector("#input-search").value;
-    /********************** Local Storage part **************************/ 
-
-    let dataArray = []; // an empty array to store data in it
-    /* save word and audio in an object */
-    const dataObject = {
-        name: wordDiv.textContent,
-        audioSet: selector("#element-Audio")
-    }
-    dataArray.push(dataObject) //Push object of data to the array
-     /* console this array to see all data at your browser console */
-     console.log(dataArray);
-
-     /* set stringified data in local storage */
-     localStorage.setItem('data', JSON.stringify(dataArray))
-
 
 // Clear Input Search
 selector("#input-search").value = "";
 } 
+
+/********************** Start Local Storage part **************************/ 
+function storeData() {
+    let input = selector("#input-search");
+
+
+/* save word and audio in an object */
+    const dataObject = {
+    name: wordDiv.textContent,
+    audioSet: selector("#element-Audio").getAttribute("src")
+    }
+
+/* If there is data saved already in local storage, add the new data to old data*/
+    if (input.value !== "") {
+        let oldData = JSON.parse(localStorage.getItem("data"));
+        if(oldData !== null){
+            oldData.push(dataObject);
+            localStorage.setItem("data", JSON.stringify(oldData))
+        } else{ /* If local storage is empty, Push new data to the empty array */
+                dataArray.push(dataObject) //Push object of data to the array
+
+     /* set stringified data in local storage */
+                localStorage.setItem('data', JSON.stringify(dataArray))
+
+            }
+        }else{ /* If there is no  */
+            alert('Please enter your word');
+        }
+}
+    /********************** End Local Storage part **************************/
