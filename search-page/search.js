@@ -89,8 +89,18 @@ function displayWord (){
     let wordDiv = document.getElementById("newWord");
 
     wordDiv.textContent = selector("#input-search").value;
-    /************ Local Storage part ****************/ 
-    let dataArray = [];
+    /********************** Local Storage part **************************/ 
+    
+    let dataArray = []; // an empty array to store data in it
+    /* save word and audio in an object */
+    const dataObject = {
+        name: wordDiv.textContent,
+        audioSet: selector("#element-Audio")
+    }
+    dataArray.push(dataObject) //Push object of data to the array
+     /* console this array to see all data at your browser console */
+     console.log(dataArray);
+
 
 // Clear Input Search
 selector("#input-search").value = "";
