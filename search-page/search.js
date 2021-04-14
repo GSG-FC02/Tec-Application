@@ -90,6 +90,10 @@ function displayWord (){
 
     wordDiv.textContent = selector("#input-search").value;
     /* Local Storage Part */
+    /* Store data in variables to easily use it */
+    let dataArray = []; // Empty array to store data
+    let wordText = wordDiv.textContent; // The word
+    let audioSet = selector("#element-Audio"); // The audio
 
 // Clear Input Search
 selector("#input-search").value = "";
