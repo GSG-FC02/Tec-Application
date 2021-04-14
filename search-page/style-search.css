@@ -50,11 +50,13 @@ header {
     color:rgba(0, 0, 0, 0.46);
     font-size: 16px;
     font-weight: bold;
-    letter-spacing: 2px;
 }
 .search-bar input:focus::-webkit-input-placeholder {
     opacity: 0;
     transition: opacity 0.35s ease-in-out;
+}
+.image-robot audio {
+    display: none;
 }
 /* End section search  */
 
@@ -69,6 +71,14 @@ header {
     border: 5px solid #FFF;
     border-radius: 15px;
 }
+
+#newWord {
+    color: #FF3482;
+    font-size: 28px;
+    margin: -37px 0 15px 0px;
+    font-weight: 100;
+}
+
 /* End section image */
 
 /* Start footer */
