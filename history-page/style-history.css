@@ -42,6 +42,7 @@ button{
     outline: none;
 }
 
+
 .words-container button { /*your words buttons */
     width: 170px;
     height: 55px;
@@ -51,6 +52,9 @@ button{
     border: #82FF34 2px solid;
     font-size: 25px;
     font-weight: 100;
+}
+.words-container button audio {
+    display: none;
 }
 .remove-icon{
     float: right;
