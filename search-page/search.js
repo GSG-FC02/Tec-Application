@@ -4,6 +4,7 @@ let selector = (select) => {
     return document.querySelector(select)
 }
 
+
 // Exmple : selector("#input-search") <=> document.getElementById("input-search");
 
 /************************************************************************************************ */
