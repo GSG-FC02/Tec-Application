@@ -102,7 +102,7 @@ function storeData() {
 /* save word and audio in an object */
     const dataObject = {
     name: selector("#newWord").textContent,
-    audioSet: selector("#element-Audio").getAttribute("src")
+    audioSet: `https://lex-audio.useremarkable.com/mp3/${selector("#input-search").value}_us_1.mp3`
     }
 
 /* If there is data saved already in local storage, add the new data to old data*/
