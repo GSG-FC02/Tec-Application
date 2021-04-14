@@ -6,7 +6,8 @@ let selector = (select) => {
 // Exmple : selector("#input-search") <=> document.getElementById("input-search");
 
 let nullImage = 'https://i.pinimg.com/originals/c9/22/68/c92268d92cf2dbf96e3195683d9e14fb.png';
-let sampleImage = 'http://127.0.0.1:5500/images/sample.png';
+//let sampleImage = 'http://127.0.0.1:5500/images/sample.png';   // local link
+let sampleImage = 'https://gsg-fc02.github.io/Tec-Application/images/sample.png'; // live link of sample image
 
 /************************************************************************************************ */
 selector("#searchIcon").addEventListener("click", () => {
