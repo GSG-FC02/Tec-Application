@@ -12,11 +12,11 @@ let selector = (select) => {
   // HTML Elements
 const wordDiv = selector('.words-container');
 
-
+// Getting and unstringify data from local storage
+let oldData = JSON.parse(localStorage.getItem("data"));
 
 /* slapping data from local storage when onloud */
 window.onload = function () {
-    let oldData = JSON.parse(localStorage.getItem("data"));
     /* If there is data in local storage, slap it to browser */ 
     if (oldData != null) {
         for (let i=0; i< oldData.length; i++) { // loop on the array of objects in local storage
