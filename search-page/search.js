@@ -90,7 +90,7 @@ function displayWord (){
 
     wordDiv.textContent = selector("#input-search").value;
     /********************** Local Storage part **************************/ 
-    
+
     let dataArray = []; // an empty array to store data in it
     /* save word and audio in an object */
     const dataObject = {
@@ -100,6 +100,9 @@ function displayWord (){
     dataArray.push(dataObject) //Push object of data to the array
      /* console this array to see all data at your browser console */
      console.log(dataArray);
+
+     /* set stringified data in local storage */
+     localStorage.setItem('data', JSON.stringify(dataArray))
 
 
 // Clear Input Search
