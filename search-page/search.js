@@ -87,6 +87,7 @@ function fetchPhoto() {
 selector("#action-loop").addEventListener("click", loopAudio )
 
 function loopAudio() {
+    console.log( selector("#Photo-fetched").src);
     if (selector("#Photo-fetched").src !== nullImage && selector("#Photo-fetched").src !== sampleImage ){
         selector("#element-Audio").play();
     } else {
