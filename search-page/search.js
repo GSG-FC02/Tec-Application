@@ -3,17 +3,28 @@
 let selector = (select) => {
     return document.querySelector(select)
 }
-
-
 // Exmple : selector("#input-search") <=> document.getElementById("input-search");
+
+let nullImage = 'https://i.pinimg.com/originals/c9/22/68/c92268d92cf2dbf96e3195683d9e14fb.png';
 
 /************************************************************************************************ */
 selector("#searchIcon").addEventListener("click", () => {
-    displayWord();                               // invoke of function to display word 
-    enteredWord();                               // invoke of function to fetch audio 
-    fetchPhoto();                               // invoke of function to fetch the image
-    storeData();                                // invoke of function to local storage
-    selector("#input-search").value = "";        // Clear Input Search
+    let regex = /^[a-zA-Z]*$/;
+    if (selector("#input-search").value !== "") {
+
+        if(selector("#input-search").value.match(regex)) {
+            enteredWord();                               // invoke of function to fetch audio 
+            fetchPhoto();                               // invoke of function to fetch the image
+            storeData();                                // invoke of function to local storage
+            selector("#input-search").value = "";        // Clear Input Search
+        } else {
+            alert('Please enter your word in English only !');
+            selector("#input-search").value = ""; 
+        }
+        
+    } else { 
+        alert('Please enter a valid word');
+    }
 });
 
 /************************************************************************************************ */
@@ -36,6 +47,7 @@ function enteredWord() {
     .then(response => { return response.json() })
     .then(data => {
         selector("#element-Audio").setAttribute("src" , data[0].phonetics[0].audio);
+        displayWord();
     })
     .catch(error => { console.log('Something went wrong', error);
     });
@@ -51,7 +63,12 @@ function fetchPhoto() {
 })
     .then(response => { return response.json() })
     .then(data => {
-        selector("#Photo-fetched").setAttribute("src" , data.results[0].urls.small);
+        if(data.results.length !== 0 ){
+            selector("#Photo-fetched").setAttribute("src" , data.results[0].urls.small);
+            displayWord(); 
+        } else {
+            selector("#Photo-fetched").setAttribute("src" , nullImage);
+        }
     })
     .catch(error => { console.log('Something went wrong', error);
     });
@@ -64,7 +81,11 @@ function fetchPhoto() {
 selector("#action-loop").addEventListener("click", loopAudio )
 
 function loopAudio() {
-    selector("#element-Audio").play();
+    if (selector("#Photo-fetched").src !== nullImage){
+        selector("#element-Audio").play();
+    } else {
+        alert ("No Voice")
+    }
 }
 
 /************************************************************************************************ */
@@ -79,48 +100,27 @@ selector("#input-search").addEventListener('keyup', function(event) {
 });
 
 /************************************************************************************************ */
-// function to allow only English letter
 
-selector("#input-search").addEventListener("keypress", function (event) {
-    
-    if ((event.keyCode > 64 && event.keyCode < 91 ) || (event.keyCode > 96 && event.keyCode < 123 ) 
-        || event.keyCode == 8 || event.keyCode == 46 || event.keyCode == 32) {
-        return true;    
-    } else {
-        event.preventDefault();
-        return false;
-    }
-});
-
-/************************************************************************************************ */
 /********************** Start Local Storage part **************************/ 
-let dataArray = []; // Array to push new data
+
+let dataArray = [];         // Array to push new data
 function storeData() {
-    let input = selector("#input-search");
-
-
-/* save word and audio in an object */
+    /* save word and audio in an object */
     const dataObject = {
     name: selector("#newWord").textContent,
     audioSet: `https://lex-audio.useremarkable.com/mp3/${selector("#input-search").value}_us_1.mp3`
     }
 
 /* If there is data saved already in local storage, add the new data to old data*/
-    if (input.value !== "") {
         let oldData = JSON.parse(localStorage.getItem("data"));
         if(oldData !== null){
             oldData.push(dataObject);
             localStorage.setItem("data", JSON.stringify(oldData))
-        } else{ /* If local storage is empty, Push new data to the empty array */
-                dataArray.push(dataObject) //Push object of data to the array
+        } else{     /* If local storage is empty, Push new data to the empty array */
+            dataArray.push(dataObject)  //Push object of data to the array
 
-     /* set stringified data in local storage */
-                localStorage.setItem('data', JSON.stringify(dataArray))
-
-            }
-        }else{ /* If there is no  */
-            alert('Please enter your word');
+            /* set stringified data in local storage */
+            localStorage.setItem('data', JSON.stringify(dataArray))
         }
-        
 }
-    /********************** End Local Storage part **************************/
+/********************** End Local Storage part **************************/
