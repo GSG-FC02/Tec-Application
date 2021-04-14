@@ -88,6 +88,8 @@ function displayWord (){
     let wordDiv = document.getElementById("newWord");
 
     wordDiv.textContent = selector("#input-search").value;
+    /************ Local Storage part ****************/ 
+    let dataArray = [];
 
 // Clear Input Search
 selector("#input-search").value = "";
