@@ -7,10 +7,24 @@ let selector = (select) => {
 // Exmple : selector("#input-search") <=> document.getElementById("input-search");
 
 /************************************************************************************************ */
+selector("#searchIcon").addEventListener("click", () => {
+    displayWord();
+    enteredWord();
+    fetchPhoto();
+    selector("#input-search").value = "";        // Clear Input Search
+});
+
+
+// function to display word add in search input
+
+function displayWord (){
+
+    selector("#newWord").textContent = selector("#input-search").value;
+} 
+
+/************************************************************************************************ */
 
 // function working to fetch audio of the entered word from API
-
-selector("#searchIcon").addEventListener("click", enteredWord )
 
 function enteredWord() {
     fetch(`https://api.dictionaryapi.dev/api/v2/entries/en_US/${selector("#input-search").value}` , {
@@ -27,8 +41,6 @@ function enteredWord() {
 /************************************************************************************************ */
 
 // function working to fetch the image of based on the entered word from API
-
-selector("#searchIcon").addEventListener("click", fetchPhoto )
 
 function fetchPhoto() {
     fetch(`https://api.unsplash.com/search/photos?query=${selector("#input-search").value}&client_id=vc40VGPe_rbHs0hMlQ4Z9UzWhPWW94MF_mmqLH7219E` , {
@@ -78,17 +90,3 @@ selector("#input-search").addEventListener("keypress", function (event) {
 });
 
 /************************************************************************************************ */
-
-// function to display word add in search input
-
-selector("#searchIcon").addEventListener("click", displayWord )
-
-function displayWord (){
-
-    let wordDiv = document.getElementById("newWord");
-
-    wordDiv.textContent = selector("#input-search").value;
-
-// Clear Input Search
-selector("#input-search").value = "";
-} 
