@@ -9,13 +9,14 @@ let selector = (select) => {
 
 /************************************************************************************************ */
 selector("#searchIcon").addEventListener("click", () => {
-    displayWord();
-    enteredWord();
-    fetchPhoto();
-    storeData(); // local storage
-    selector("#input-search").value = ""; // Clear Input Search
+    displayWord();                               // invoke of function to display word 
+    enteredWord();                               // invoke of function to fetch audio 
+    fetchPhoto();                               // invoke of function to fetch the image
+    storeData();                                // invoke of function to local storage
+    selector("#input-search").value = "";        // Clear Input Search
 });
 
+/************************************************************************************************ */
 
 // function to display word add in search input
 
