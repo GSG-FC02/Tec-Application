@@ -8,12 +8,13 @@ let selector = (select) => {
 
 /************************************************************************************************ */
 selector("#searchIcon").addEventListener("click", () => {
-    displayWord();
-    enteredWord();
-    fetchPhoto();
+    displayWord();                               // invoke of function to display word 
+    enteredWord();                               // invoke of function to fetch audio 
+    fetchPhoto();                               // invoke of function to fetch the image
     selector("#input-search").value = "";        // Clear Input Search
 });
 
+/************************************************************************************************ */
 
 // function to display word add in search input
 
