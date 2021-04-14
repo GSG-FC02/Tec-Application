@@ -1,0 +1,122 @@
+/* General Style */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body{
+    background: #45BADD;
+    Font-family : 'Rowdies', cursive; 
+    min-height: 100vh;
+}
+
+/* Header Section Style*/
+
+.link-index-header{
+    text-decoration: none;
+    color: white;
+}
+
+.logo-and-who-is-tec-button-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+#tec-logo-index{
+    margin:  27px 23px;
+}
+
+#who-is-tec-button{
+    cursor: pointer;
+    margin-top: 2.2rem;
+    margin-right: 1.4rem;
+    width: 8.5rem;
+    height: 5.4vh;
+    background: #FF3482;
+    box-shadow: -5px 5px 6px 1px rgba(130, 255, 52, 0.57);
+    border-radius: 73px;
+    font-size: 1.1rem;
+    border: none;
+}
+
+#who-is-tec-button:hover{
+    font-weight: bold;
+    box-shadow: -5px 9px 10px 4px rgba(130, 255, 52, 0.57);
+}
+
+#who-is-tec-button:active{
+    transform: translateY(3px);
+    box-shadow: 0 6px 6px 0 rgba(130, 255, 52, 0.57);
+}
+
+/* Figure Section Style */
+
+.robot-and-speaker-icon-container{
+    text-align: center;
+    margin-top: 45px;
+}
+
+.text-and-speaker-icon-figure{
+    display: flex;
+    justify-content: center;
+}
+.text-figure-container{
+    font-size: 1rem;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.69);
+    margin-left: 36px;
+}
+
+#speaker-icon{
+    margin-left: 7px;
+}
+
+#speaker-icon:active{
+    width: 25px;
+    height: 25px;
+}
+
+.Learn-with-Tec-button{
+    text-align: center;
+    margin-top: 92px;
+    height: 8.5rem;
+    
+}
+
+/* Learn with tec button section Style */
+
+.link-index-section{
+    text-decoration: none;
+    color: #FF3482;
+}
+
+#Learn-with-Tec-button{
+    cursor: pointer;
+    background: #82FF34;
+    box-shadow: 0px 4px 4px #FF3482;
+    border-radius: 51px;
+    border: none;
+    width: 18rem;
+    height: 79.1px;
+    font-weight: 1000;
+    font-size: 1.8rem;
+}
+
+#Learn-with-Tec-button:hover{
+    box-shadow: 0 8px 9px 0 #FF3482;
+}
+
+#Learn-with-Tec-button:active{
+    transform: translateY(3px);
+    box-shadow: 0 6px 6px 0 #FF3482;
+}
+
+
+/* Start media query */
+
+
+
+
+
+

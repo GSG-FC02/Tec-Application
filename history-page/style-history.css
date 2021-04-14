@@ -67,6 +67,7 @@ button:hover{
     font-weight: 300;
     text-align: center;
     box-shadow: 0px 4px 4px #FF3482;
+    border: none;
 
 }
 .footer {
