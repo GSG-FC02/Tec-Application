@@ -31,6 +31,10 @@ window.onload = function () {
             let audio = creatElement('audio')
             audio.setAttribute('src', oldData[i].audioSet)
             appendElement(wordButton, audio)
+            /* Play the audio on clicking on  */ 
+            wordButton.addEventListener('click', ()=>{
+                audio.play()
+            })
           
   
         }
