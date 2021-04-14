@@ -6,6 +6,7 @@ let selector = (select) => {
 // Exmple : selector("#input-search") <=> document.getElementById("input-search");
 
 let nullImage = 'https://i.pinimg.com/originals/c9/22/68/c92268d92cf2dbf96e3195683d9e14fb.png';
+let sampleImage = 'http://127.0.0.1:5500/images/sample.png';
 
 /************************************************************************************************ */
 selector("#searchIcon").addEventListener("click", () => {
@@ -13,10 +14,8 @@ selector("#searchIcon").addEventListener("click", () => {
     if (selector("#input-search").value !== "") {
 
         if(selector("#input-search").value.match(regex)) {
-            enteredWord();                               // invoke of function to fetch audio 
             fetchPhoto();                               // invoke of function to fetch the image
-            storeData();                                // invoke of function to local storage
-            selector("#input-search").value = "";        // Clear Input Search
+            enteredWord();                               // invoke of function to fetch audio 
         } else {
             alert('Please enter your word in English only !');
             selector("#input-search").value = ""; 
@@ -32,10 +31,16 @@ selector("#searchIcon").addEventListener("click", () => {
 // function to display word add in search input
 
 function displayWord (){
-
     selector("#newWord").textContent = selector("#input-search").value;
+    selector("#input-search").value = "";
 } 
 
+// function to hide the previous valid word when an invalid word is entered
+
+function hideWord (){
+    selector("#newWord").textContent = null;
+    selector("#input-search").value = "";
+} 
 /************************************************************************************************ */
 
 // function working to fetch audio of the entered word from API
@@ -47,7 +52,6 @@ function enteredWord() {
     .then(response => { return response.json() })
     .then(data => {
         selector("#element-Audio").setAttribute("src" , data[0].phonetics[0].audio);
-        displayWord();
     })
     .catch(error => { console.log('Something went wrong', error);
     });
@@ -66,8 +70,10 @@ function fetchPhoto() {
         if(data.results.length !== 0 ){
             selector("#Photo-fetched").setAttribute("src" , data.results[0].urls.small);
             displayWord(); 
+            storeData();  // invoke of function to local storage
         } else {
             selector("#Photo-fetched").setAttribute("src" , nullImage);
+            hideWord();  //hide the previous valid word when an invalid word is entered
         }
     })
     .catch(error => { console.log('Something went wrong', error);
@@ -81,10 +87,11 @@ function fetchPhoto() {
 selector("#action-loop").addEventListener("click", loopAudio )
 
 function loopAudio() {
-    if (selector("#Photo-fetched").src !== nullImage){
+    console.log(selector("#Photo-fetched").src)
+    if (selector("#Photo-fetched").src !== nullImage && selector("#Photo-fetched").src !== sampleImage ){
         selector("#element-Audio").play();
     } else {
-        alert ("No Voice")
+        alert ("No Voice !");
     }
 }
 
@@ -105,6 +112,7 @@ selector("#input-search").addEventListener('keyup', function(event) {
 
 let dataArray = [];         // Array to push new data
 function storeData() {
+
     /* save word and audio in an object */
     const dataObject = {
     name: selector("#newWord").textContent,
