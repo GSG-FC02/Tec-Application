@@ -75,6 +75,12 @@ p {
 
 #volume {
     margin-left: 12px;
+    cursor: pointer;
+}
+
+#volume:active{
+    width: 25px;
+    height: 25px;
 }
 
 /* Style For Button */
