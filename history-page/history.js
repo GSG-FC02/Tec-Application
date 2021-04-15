@@ -12,6 +12,8 @@ let selector = (select) => {
   // HTML Elements
 const wordDiv = selector('.words-container');
 
+
+
 /* slapping data from local storage when onloud */
 window.onload = function () {
     let oldData = JSON.parse(localStorage.getItem("data"));
@@ -35,12 +37,18 @@ window.onload = function () {
             wordButton.addEventListener('click', ()=>{
                 audio.play()
             })
-          
-  
+
+            /* Delete selected items when they clicked */ 
+            removeIcon.addEventListener("click" , deleteSelectedItem)
+
         }
       }
    
    
   };
+
+  function deleteSelectedItem(element){
+      element.target.parentElement.remove();
+  }
 
 
