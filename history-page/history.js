@@ -11,7 +11,7 @@ let selector = (select) => {
   };
   // HTML Elements
 const wordDiv = selector('.words-container');
-const removeAllButton = document.querySelector('.remove-all')
+const removeAllButton = selector('.remove-all')
 
 // Getting and unstringify data from local storage
 let oldData = JSON.parse(localStorage.getItem("data"));
