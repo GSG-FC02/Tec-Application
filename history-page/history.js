@@ -11,6 +11,7 @@ let selector = (select) => {
   };
   // HTML Elements
 const wordDiv = selector('.words-container');
+const removeAllButton = document.querySelector('.remove-all')
 
 // Getting and unstringify data from local storage
 let oldData = JSON.parse(localStorage.getItem("data"));
@@ -61,7 +62,6 @@ window.onload = function () {
 
 
 /* Remove all items from history page and local storage*/
-  const removeAllButton = document.querySelector('.remove-all')
   removeAllButton.addEventListener("click" , deleteAllItems)
 
   
