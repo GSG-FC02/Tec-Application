@@ -70,6 +70,7 @@ body{
 
 #speaker-icon{
     margin-left: 7px;
+    cursor: pointer;
 }
 
 #speaker-icon:active{
@@ -113,7 +114,7 @@ body{
 }
 
 
-/* Start media query */
+
 
 
 
