@@ -3,7 +3,7 @@ const Audio = document.getElementById('ele-Aduio');
 const backgroundMusic = document.getElementById('background-music');
 speaker.addEventListener('click' , displayAudio);
 
-window.onload(backgroundMusic.play());
+document.onload(backgroundMusic.play());
 
 
 function displayAudio() {
