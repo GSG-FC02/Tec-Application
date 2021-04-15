@@ -122,9 +122,16 @@ function storeData() {
 
 /* If there is data saved already in local storage, add the new data to old data*/
         let oldData = JSON.parse(localStorage.getItem("data"));
-        if(oldData !== null){
+        if((oldData !== null)){
+            /* Prevent repeatred words to store in history page*/ 
+            for( let i = 0; i < oldData.length; i++){
+                if (oldData[i].name === dataObject.name) {
+                    return;
+                } 
+            } 
             oldData.push(dataObject);
             localStorage.setItem("data", JSON.stringify(oldData))
+           
         } else{     /* If local storage is empty, Push new data to the empty array */
             dataArray.push(dataObject)  //Push object of data to the array
 
