@@ -50,9 +50,14 @@ window.onload = function () {
 /* Remove selected data from history page and local storage*/
   let deleteSelectedItem = (element) => {
     element.target.parentElement.remove();
-    oldData.splice(element, 1);  
-    localStorage.setItem("data", JSON.stringify(oldData));
+    for( let i = 0; i < oldData.length ; i++){
+      if(oldData[i].name === element.target.parentElement.textContent){
+        oldData.splice( i , 1 );
+        localStorage.setItem("data", JSON.stringify(oldData));
+      }
+    }
   }
+
 
 
 /* Remove all items from history page and local storage*/
