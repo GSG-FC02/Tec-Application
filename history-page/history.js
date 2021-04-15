@@ -47,8 +47,9 @@ window.onload = function () {
    
   };
 
-  function deleteSelectedItem(element){
-      element.target.parentElement.remove();
+  let deleteSelectedItem = (element) => {
+    element.target.parentElement.remove();
   }
+ 
 
 
