@@ -16,7 +16,6 @@ selector("#searchIcon").addEventListener("click", () => {
 
         if(selector("#input-search").value.match(regex)) {
             fetchPhoto();                               // invoke of function to fetch the image
-            enteredWord();                               // invoke of function to fetch audio 
         } else {
             alert('Please enter your word in English only !');
             selector("#input-search").value = ""; 
@@ -53,6 +52,8 @@ function enteredWord() {
     .then(response => { return response.json() })
     .then(data => {
         selector("#element-Audio").setAttribute("src" , data[0].phonetics[0].audio);
+        displayWord(); 
+        storeData();  // invoke of function to local storage
     })
     .catch(error => { console.log('Something went wrong', error);
     });
@@ -70,8 +71,7 @@ function fetchPhoto() {
     .then(data => {
         if(data.results.length !== 0 ){
             selector("#Photo-fetched").setAttribute("src" , data.results[0].urls.small);
-            displayWord(); 
-            storeData();  // invoke of function to local storage
+            enteredWord();                               // invoke of function to fetch audio 
         } else {
             selector("#Photo-fetched").setAttribute("src" , nullImage);
             hideWord();  //hide the previous valid word when an invalid word is entered
@@ -117,8 +117,8 @@ function storeData() {
     /* save word and audio in an object */
     const dataObject = {
     name: selector("#newWord").textContent,
-    audioSet: `https://lex-audio.useremarkable.com/mp3/${selector("#newWord").textContent}_us_1.mp3`
-    }
+    audioSet: selector("#element-Audio").getAttribute("src")
+}
 
 /* If there is data saved already in local storage, add the new data to old data*/
         let oldData = JSON.parse(localStorage.getItem("data"));
