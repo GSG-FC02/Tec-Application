@@ -47,18 +47,23 @@ window.onload = function () {
    
   };
 
+/* Remove selected data from history page and local storage*/
   let deleteSelectedItem = (element) => {
     element.target.parentElement.remove();
+    oldData.splice(element, 1);  
+    localStorage.setItem("data", JSON.stringify(oldData));
   }
 
-  const removeAllButton = document.querySelector('.remove-all')
-  removeAllButton.removeEventListener("click" , deleteAllItems)
 
-  let deleteAllItems = () => {
-    // window.localStorage.clear();
-    selector('.words-container').innerHTML = ''; //empty the words div
-    oldData = []; //empty the array
-    localStorage.setItem("data", JSON.stringify(oldData)); //empty the local storage
+/* Remove all items from history page and local storage*/
+  const removeAllButton = document.querySelector('.remove-all')
+  removeAllButton.addEventListener("click" , deleteAllItems)
+
+  
+  function deleteAllItems () {
+     selector('.words-container').innerHTML = ''; 
+     oldData = [];
+     localStorage.setItem("data", JSON.stringify(oldData));
   }
 
   
