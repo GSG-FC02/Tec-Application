@@ -50,6 +50,18 @@ window.onload = function () {
   let deleteSelectedItem = (element) => {
     element.target.parentElement.remove();
   }
- 
+
+  const removeAllButton = document.querySelector('.remove-all')
+  removeAllButton.removeEventListener("click" , deleteAllItems)
+
+  let deleteAllItems = () => {
+    // window.localStorage.clear();
+    selector('.words-container').innerHTML = ''; //empty the words div
+    oldData = []; //empty the array
+    localStorage.setItem("data", JSON.stringify(oldData)); //empty the local storage
+  }
+
+  
+
 
 
