@@ -59,6 +59,12 @@ button{
 .remove-icon{
     float: right;
     margin-right:  5px;
+    cursor: pointer;
+}
+
+.remove-icon:active{
+    height: 30px;
+    width: 30px;
 }
 /*Footer Style*/
 .footer button { /*remove all button*/
@@ -109,3 +115,4 @@ button:hover{
         align-items: center;
     } 
 }
+
