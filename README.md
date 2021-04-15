@@ -32,9 +32,8 @@ Tec App with a special character "Tec", that enable kids to have an enjoyable jo
 
 ### Figma Link: 
 
-This link showcases a general overview of the project that team members designed.
+This link showcases a general overview of the project that team members designed.[here](https://www.figma.com/file/QCA0OQJqr7tgZ8N7QOtJeZ/Tec-Application)
 
-https://www.figma.com/file/QCA0OQJqr7tgZ8N7QOtJeZ/Tec-Application
 
 ## User Story
 As a user I want to learn new vocabs in a fun way and gain information without getting bored, so I need a valuable and funny source.
