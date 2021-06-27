@@ -101,6 +101,10 @@ footer {
     text-align: center;
     line-height: 45px;
     cursor: pointer;
+}
+.action-buttons a i {
+    margin-left: 10px;
+    font-size: 22px;
 } 
 .image-robot {
     width: 50%;
